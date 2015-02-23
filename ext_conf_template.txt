@@ -1,0 +1,5 @@
+# cat=basic; type=string; label=Path to wkhtmltopdf: Enter path to wkhtmltopdf binary.
+wkhtmltopdf_bin = /usr/bin/wkhtmltopdf
+
+# cat=basic; type=string; label=Prepend command: Needed to start a virtual xserver, e.g. xvfb-run.
+prepend_bin =

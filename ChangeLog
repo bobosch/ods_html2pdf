@@ -1,0 +1,6 @@
+2012-02-20 Robert Heel <rheel@1drop.de>
+	* Bugfix: Add Content-type header.
+	* Bugfix: Also make image source absolute.
+
+2010-09-22 Robert Heel <rheel@1drop.de>
+	* Initial release.
