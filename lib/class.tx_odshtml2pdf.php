@@ -9,11 +9,9 @@ class tx_odshtml2pdf {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
-			$htmlfile=tempnam(PATH_site.'typo3temp/tx_odshtml2pdf/','pdf_');
+			$htmlfile=PATH_site.'typo3temp/tx_odshtml2pdf/'.uniqid().'.html';
 			file_put_contents($htmlfile,$content);
-			chmod($htmlfile,0664);
-// 			$cmd=$config['wkhtmltopdf_bin'].' -q '.escapeshellarg($htmlfile).' -';
-			$cmd='cat '.escapeshellarg($htmlfile).' | '.$config['wkhtmltopdf_bin'].' -q - -';
+			$cmd=$config['wkhtmltopdf_bin'].' -q '.escapeshellarg($htmlfile).' -';
 			if($config['prepend_bin']) $cmd=$config['prepend_bin'].' '.$cmd;
 			$pdf=shell_exec($cmd);
 			unlink($htmlfile);

@@ -1,3 +1,8 @@
+2013-05-30 Robert Heel <typo3@bobosch.de>
+	* Bugfix: Conflict when creating multiple pdf's at once (Thanks to Jan Bartels).
+	* Change: Add page type to TS constants (Thanks to Jan Bartels).
+	* Bugfix: Send standard mime type on pdf error.
+
 2012-02-20 Robert Heel <rheel@1drop.de>
 	* Bugfix: Add Content-type header.
 	* Bugfix: Also make image source absolute.

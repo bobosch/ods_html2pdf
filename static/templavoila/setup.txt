@@ -1,6 +1,6 @@
 pdf = PAGE
 pdf {
-	typeNum = 123 
+	typeNum = {$plugin.tx_odshtml2pdf.typeNum}
 	50 = CONTENT
 	50 < styles.content.get
 	config {

@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "ods_html2pdf".
  *
- * Auto generated 10-04-2013 21:08
+ * Auto generated 24-05-2013 00:23
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -15,9 +15,9 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Creates a pdf version of the webpages. Includes static TS for templavoila. Needs wkhtmltopdf (webkit engine) binary on the server.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '0.1.1',
-	'dependencies' => '',
-	'conflicts' => '',
+	'version' => '0.1.2',
+	'dependencies' => 'cms',
+	'conflicts' => 'pdf_generator2',
 	'priority' => '',
 	'loadOrder' => '',
 	'module' => '',
@@ -44,7 +44,9 @@ $EM_CONF[$_EXTKEY] = array(
 		'suggests' => array(
 		),
 	),
-	'_md5_values_when_last_written' => 'a:8:{s:9:"ChangeLog";s:4:"9aa3";s:21:"ext_conf_template.txt";s:4:"4b19";s:12:"ext_icon.gif";s:4:"7e7d";s:14:"ext_tables.php";s:4:"3569";s:11:"gen_pdf.php";s:4:"3824";s:10:"README.txt";s:4:"305c";s:28:"lib/class.tx_odshtml2pdf.php";s:4:"dcfb";s:28:"static/templavoila/setup.txt";s:4:"0304";}',
+	'_md5_values_when_last_written' => 'a:9:{s:9:"ChangeLog";s:4:"d692";s:21:"ext_conf_template.txt";s:4:"4b19";s:12:"ext_icon.gif";s:4:"7e7d";s:14:"ext_tables.php";s:4:"3569";s:11:"gen_pdf.php";s:4:"52a4";s:10:"README.txt";s:4:"305c";s:28:"lib/class.tx_odshtml2pdf.php";s:4:"3f08";s:32:"static/templavoila/constants.txt";s:4:"048a";s:28:"static/templavoila/setup.txt";s:4:"98ff";}',
+	'suggests' => array(
+	),
 );
 
 ?>
