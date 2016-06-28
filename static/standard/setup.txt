@@ -1,0 +1,15 @@
+pdf = PAGE
+pdf {
+	typeNum = {$plugin.tx_odshtml2pdf.typeNum}
+	config {
+		pageGenScript = EXT:ods_html2pdf/gen_pdf.php
+		admPanel = 0
+		xhtml_cleaning = 0
+		USERNAME_substToken =
+		ftu = 0
+		disableCharsetHeader = 1
+		prefixLocalAnchors = 0
+	}
+	10 = USER
+	10.userFunc = tx_templavoila_pi1->main_page
+}

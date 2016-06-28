@@ -1,0 +1,4 @@
+plugin.tx_odshtml2pdf {
+	# cat=basic//3; type=int+; label=type ID: the type ID for the pdf page
+	typeNum = 123 
+}
