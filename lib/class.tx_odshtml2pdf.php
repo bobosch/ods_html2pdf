@@ -14,7 +14,7 @@ class tx_odshtml2pdf {
 				file_put_contents($htmlfile, $content);
 			}
 
-			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' -q - -';
+			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' ' . $config['wkhtmltopdf_opt'] . ' - -';
 			return tx_odshtml2pdf::shell($cmd, $content);
 		}
 	}
