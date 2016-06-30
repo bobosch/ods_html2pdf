@@ -9,6 +9,11 @@ class tx_odshtml2pdf {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
+			if ($config['debug']) {
+				$htmlfile = PATH_site . 'typo3temp/tx_odshtml2pdf/' . $GLOBALS['TSFE']->id . '.html';
+				file_put_contents($htmlfile, $content);
+			}
+
 			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' -q - -';
 			return tx_odshtml2pdf::shell($cmd, $content);
 		}

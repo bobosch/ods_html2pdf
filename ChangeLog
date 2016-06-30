@@ -1,5 +1,6 @@
 2016-06-30 Robert Heel <typo3@bobosch.de>
 	* Change: Use stdin and stout of wkhtmltopdf.
+	* Add: Debug option.
 
 2015-07-22 Robert Heel <typo3@bobosch.de>
 	* Add: Static TS for standard installations.

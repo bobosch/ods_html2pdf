@@ -3,3 +3,6 @@ wkhtmltopdf_bin = /usr/bin/wkhtmltopdf
 
 # cat=basic; type=string; label=Prepend command: Needed to start a virtual xserver, e.g. xvfb-run.
 prepend_bin =
+
+# cat=basic; type=boolean; label=Enable debug: Create html file in typo3temp/tx_odshtml2pdf/.
+debug = 0
