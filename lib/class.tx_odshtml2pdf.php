@@ -9,15 +9,30 @@ class tx_odshtml2pdf {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
-			$htmlfile=PATH_site.'typo3temp/tx_odshtml2pdf/'.uniqid().'.html';
-			file_put_contents($htmlfile,$content);
-			$cmd=$config['wkhtmltopdf_bin'].' -q '.escapeshellarg($htmlfile).' -';
-			if($config['prepend_bin']) $cmd=$config['prepend_bin'].' '.$cmd;
-			$pdf=shell_exec($cmd);
-			unlink($htmlfile);
+			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' -q - -';
+			return tx_odshtml2pdf::shell($cmd, $content);
 		}
+	}
+	
+	function shell($command,$stdin) {
+		$descriptorspec = array(
+			0 => array("pipe", "r"), // stdin
+			1 => array("pipe", "w"), // stdout
+		);
 
-		return $pdf;
+		$process = proc_open($command, $descriptorspec, $pipes);
+
+		if (is_resource($process)) {
+			fwrite($pipes[0], $stdin);
+			fclose($pipes[0]);
+
+			$stdout = stream_get_contents($pipes[1]);
+			fclose($pipes[1]);
+
+			proc_close($process);
+
+			return $stdout;
+		}
 	}
 }
 
