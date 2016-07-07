@@ -1,8 +1,6 @@
 pdf = PAGE
 pdf {
 	typeNum = {$plugin.tx_odshtml2pdf.typeNum}
-	50 = CONTENT
-	50 < styles.content.get
 	config {
 		pageGenScript = EXT:ods_html2pdf/gen_pdf.php
 		admPanel = 0

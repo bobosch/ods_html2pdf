@@ -10,6 +10,6 @@ pdf {
 		disableCharsetHeader = 1
 		prefixLocalAnchors = 0
 	}
-	10 = USER
-	10.userFunc = tx_templavoila_pi1->main_page
+	10 = CONTENT
+	10 < styles.content.get
 }
