@@ -1,11 +1,6 @@
 <?php
 class tx_odshtml2pdf {
-	var $prefixId = 'tx_odshtml2pdf'; // Same as class name
-	var $scriptRelPath = 'lib/class.tx_odshtml2pdf.php'; // Path to this script relative to the extension dir.
-	var $extKey = 'ods_html2pdf'; // The extension key.
-	var $pi_checkCHash = TRUE;
-
-	function convert($content,$conf)	{
+	function convert($content) {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
@@ -15,7 +10,11 @@ class tx_odshtml2pdf {
 			}
 
 			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' ' . $config['wkhtmltopdf_opt'] . ' - -';
-			return tx_odshtml2pdf::shell($cmd, $content);
+			
+			$output = explode('%PDF', tx_odshtml2pdf::shell($cmd, $content), 2);
+			if(isset($output[1])) $output[1] = '%PDF' . $output[1];
+
+			return $output;
 		}
 	}
 	

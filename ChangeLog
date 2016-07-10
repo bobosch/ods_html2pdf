@@ -1,5 +1,6 @@
 2016-07-10 Robert Heel <typo3@bobosch.de>
 	* Change: REST documentation.
+	* Bugfix: Show pdf even if wkhtmltopdf output warnings.
 
 2016-07-06 Robert Heel <typo3@bobosch.de>
 	* Bugfix: Cleanup static TS.

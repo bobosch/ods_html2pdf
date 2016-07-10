@@ -100,20 +100,21 @@ $GLOBALS{TSFE}->content = preg_replace_callback('/(<img [^>]*src=\")(?!#)(.*?)(\
 $GLOBALS{TSFE}->content = preg_replace_callback('/(<link [^>]*href=\")(?!#)(.*?)(\")/',  'fix_links_callback', $GLOBALS{TSFE}->content );
 
 //---------------------------- end make links absolute --------------
-$pdf=tx_odshtml2pdf::convert($GLOBALS{TSFE}->content,array());
 
-if(substr($pdf,0,4)=='%PDF'){
+$output = tx_odshtml2pdf::convert($GLOBALS{TSFE}->content);
+
+if($output[1]) {
 	header('Content-type: application/pdf');
-	$GLOBALS{TSFE}->content=$pdf;
-}else{
+	$GLOBALS{TSFE}->content = $output[1];
+} else {
 	// don't cache errors
 	$GLOBALS{TSFE}->set_no_cache();
-	$GLOBALS{TSFE}->content = '<html><title>wkhtmltopdf problem</title><body><h1>HTML2PDF Problem:</h1>';
-	if ($errors) {
-		$GLOBALS{TSFE}->content.='wkhtmltopdf produced the following errors:';
-		$GLOBALS{TSFE}->content.='<table borders=1 bgcolor="#e0e0e0"><tr><td>'.$errors.'</td></tr></table>';
+	$GLOBALS{TSFE}->content = '<html><head><title>wkhtmltopdf problem</title></head><body><h1>wkhtmltopdf problem:</h1>';
+	if($output[0]) {
+		$GLOBALS{TSFE}->content.='<p>wkhtmltopdf produced the following errors:</p>';
+		$GLOBALS{TSFE}->content.='<pre>' . htmlentities($output[0]) . '</pre>';
 	} else {
-		$GLOBALS{TSFE}->content.= 'wkhtmltopdf produced no pdf-output.<br>';
+		$GLOBALS{TSFE}->content.= '<p>wkhtmltopdf produced no pdf-output.</p>';
 	}
 	$GLOBALS{TSFE}->content.='</body></html>';
 }
