@@ -15,7 +15,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'description' => 'Creates a pdf version of the webpages. Includes static TS for templavoila. Needs wkhtmltopdf (webkit engine) binary on the server.',
 	'category' => 'plugin',
 	'shy' => 0,
-	'version' => '0.1.6',
+	'version' => '0.2.0',
 	'dependencies' => '',
 	'conflicts' => '',
 	'priority' => '',
@@ -34,7 +34,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'CGLcompliance_note' => '',
 	'constraints' => array(
 		'depends' => array(
-			'typo3' => '6.2.0-6.2.99',
+			'typo3' => '6.2.0-7.6.99',
 			'php' => '5.0.0-0.0.0',
 			'cms' => '',
 		),

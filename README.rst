@@ -33,11 +33,21 @@ If you want your complete website in the pdf file, include static TS either for 
 Tips and tricks
 ---------------
 
-To change the source path of additional files use
- pdf.config.absRefPrefix = http://[domain]/
+To change the source path of additional files use absRefPrefix
+ pdf.config.absRefPrefix = xxx
+ 
+Or use a condition
+::
+
+	[globalVar = GP:type=123]
+		config.absRefPrefix = xxx
+	[end]
+ 
+Set it to your domain
+ absRefPrefix = http://[domain]/
 
 If javascript loads files from your site, the cross origin policy will prevent this. Load all files localy with
- pdf.config.absRefPrefix = /[httproot]/
+ absRefPrefix = /[httproot]/
 
 To wait for complex javascript code you can change the htmltopdf parameters to
  --quiet --javascript-delay 2000

@@ -1,3 +1,6 @@
+2016-07-12 Robert Heel <typo3@bobosch.de>
+	* Change: TYPO3 7.6 compatibility.
+
 2016-07-10 Robert Heel <typo3@bobosch.de>
 	* Change: REST documentation.
 	* Bugfix: Show pdf even if wkhtmltopdf output warnings.
@@ -14,7 +17,7 @@
 	* Add: Static TS for standard installations.
 
 2015-02-22 Jan Bartels
-	* Change: TYPO3 6.2 compatibility
+	* Change: TYPO3 6.2 compatibility.
 
 2013-05-30 Robert Heel <typo3@bobosch.de>
 	* Bugfix: Conflict when creating multiple pdf's at once (Thanks to Jan Bartels).
