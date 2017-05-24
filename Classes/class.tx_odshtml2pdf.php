@@ -1,6 +1,6 @@
 <?php
 class tx_odshtml2pdf {
-	function convert($content) {
+	public static function convert($content) {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
@@ -17,8 +17,8 @@ class tx_odshtml2pdf {
 			return $output;
 		}
 	}
-	
-	function shell($command,$stdin) {
+
+    public static function shell($command,$stdin) {
 		$descriptorspec = array(
 			0 => array("pipe", "r"), // stdin
 			1 => array("pipe", "w"), // stdout

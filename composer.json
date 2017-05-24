@@ -1,0 +1,16 @@
+{
+  "name": "bobosch/ods-html2pdf",
+  "type": "typo3-cms-extension",
+  "description": "Creates a pdf version of the webpages. Includes static TS for templavoila. Needs wkhtmltopdf (webkit engine) binary on the server.",
+  "require": {
+    "php" : ">=5.3",
+    "typo3/cms-core": ">=6.2,<8.0"
+  },
+  "autoload": {
+    "classmap": ["Classes/"]
+  },
+  "replace": {
+    "ods_html2pdf": "self.version",
+    "typo3-ter/ods-html2pdf": "self.version"
+  }
+}
