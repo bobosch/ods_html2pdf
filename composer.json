@@ -1,0 +1,12 @@
+{
+  "name": "bobosch/ods-html2pdf",
+  "type": "typo3-cms-extension",
+  "description": "Manage specific application datas on the domain record",
+  "require": {
+    "php" : ">=5.3",
+    "typo3/cms-core": ">=6.2,<8.0"
+  },
+  "autoload": {
+    "classmap": ["Classes/"]
+  }
+}
