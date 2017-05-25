@@ -1,6 +1,6 @@
 <?php
 class tx_odshtml2pdf {
-	function convert($content) {
+	public static function convert($content) {
 		$config=unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
 
 		if($config['wkhtmltopdf_bin']){
@@ -10,15 +10,15 @@ class tx_odshtml2pdf {
 			}
 
 			$cmd = $config['prepend_bin'] . ' ' . $config['wkhtmltopdf_bin'] . ' ' . $config['wkhtmltopdf_opt'] . ' - -';
-			
+
 			$output = explode('%PDF', tx_odshtml2pdf::shell($cmd, $content), 2);
 			if(isset($output[1])) $output[1] = '%PDF' . $output[1];
 
 			return $output;
 		}
 	}
-	
-	function shell($command,$stdin) {
+
+	public static function shell($command,$stdin) {
 		$descriptorspec = array(
 			0 => array("pipe", "r"), // stdin
 			1 => array("pipe", "w"), // stdout

@@ -4,7 +4,7 @@
 :Extension Key: ods_html2pdf
 :Description: Creates a pdf version of the webpages. Includes static TS for templavoila. Needs wkhtmltopdf (webkit engine) binary on the server.
 :Author: Robert Heel <typo3@bobosch.de>
-:Copyright: 2011-2016
+:Copyright: 2011-2017
 
 Introduction
 ============
