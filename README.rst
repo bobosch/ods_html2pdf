@@ -52,4 +52,5 @@ If javascript loads files from your site, the cross origin policy will prevent t
 To wait for complex javascript code you can change the htmltopdf parameters to
  --quiet --javascript-delay 2000
 
-Other TS examples and feedback are welcome!
+Other TS examples, feedback and patches are welcome!
+https://github.com/bobosch/ods_html2pdf
