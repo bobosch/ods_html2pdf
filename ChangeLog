@@ -1,5 +1,6 @@
 2017-05-25 Robert Heel <typo3@bobosch.de>
 	* Issue #1: Static calls for non-static methods (Thanks to Julien VITTE).
+	* Add: composer.json.
 
 2016-07-12 Robert Heel <typo3@bobosch.de>
 	* Change: TYPO3 7.6 compatibility.
