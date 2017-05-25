@@ -96,6 +96,13 @@ $GLOBALS['TSFE']->content = preg_replace_callback('/(<link [^>]*href=\")(?!#)(.*
 
 $output = tx_odshtml2pdf::convert($GLOBALS['TSFE']->content);
 
+if($output[0]) {
+	$config = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['ods_html2pdf']);
+	if ($config['debug']) {
+		\TYPO3\CMS\Core\Utility\GeneralUtility::devLog($output[0], 'ods_html2pdf', 2);
+	}
+}
+
 if($output[1]) {
 	header('Content-type: application/pdf');
 	$GLOBALS['TSFE']->content = $output[1];
